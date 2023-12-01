@@ -32,12 +32,12 @@ class Database():
         except Error as e:
             print("Error while connecting to MySQL", e)
 
-    def addPatient(self, patient_name, patient_id, age, admission_date, discharge_date):
+    def addPatient(self, patient_name, age, admission_date, discharge_date):
         ''' Method to insert a new patient into the patients table '''
         if self.connection.is_connected():
             self.cursor = self.connection.cursor()
-            query = "INSERT INTO patients (patient_name, patient_id, age, admission_date) VALUES (%s, %s, %s, %s)"
-            self.cursor.execute(query, (patient_name, patient_id, age, admission_date, discharge_date))
+            query = "INSERT INTO patients (patient_name, age, admission_date, discharge_date) VALUES (%s, %s, %s, %s)"
+            self.cursor.execute(query, (patient_name, age, admission_date, discharge_date))
             self.connection.commit()
             return
 
