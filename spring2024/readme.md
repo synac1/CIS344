@@ -7,7 +7,7 @@ Finalize the web platform for Restaurant Managers to manage reservation schedule
 •	Upload your source code (public), with the report in PDF to GitHub, and submit the link to Blackboard.
 •	Make a presentation in person. 
 Guidelines: 
-Link to starter code: https://github.com/synac1/CIS344/tree/main/Spring-2023 You can download the files. 
+Link to starter code: [https://github.com/synac1/CIS344/tree/main/Spring-2023](https://github.com/synac1/CIS344/tree/main/spring2024) You can download the files. 
 •	The platform must handle checking whether a customer already exists in the Customers table before making a reservation. If not, the customer should be added.
 •	A new customer can be added either through a direct addition to the Customers table or during the reservation process if they do not already exist.
 •	Integration of customer data across the platform enhances the ability to track and manage customer interactions comprehensively, from reservations to dining preferences.
