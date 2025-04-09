@@ -2,7 +2,7 @@
 class PharmacyDatabase {
     private $host = "localhost";
     private $port = "3306";
-    private $database = "pharmacy_portaldb";
+    private $database = "pharmacy_portal_db";
     private $user = "root";
     private $password = "YourPassword";
     private $connection;
@@ -27,9 +27,9 @@ class PharmacyDatabase {
         $stmt->execute();
         $stmt->bind_result($patientId);
         $stmt->fetch();
-        $stmt->close()
+        $stmt->close();
         
-        if (patientId){
+        if ($patientId){
             $stmt = $this->connection->prepare(
                 "INSERT INTO prescriptions (userId, medicationId, dosageInstructions, quantity) VALUES (?, ?, ?, ?)"
             );
@@ -43,7 +43,7 @@ class PharmacyDatabase {
     }
 
     public function getAllPrescriptions() {
-        $result = $this->connection->query("SELECT * FROM  Prescriptions join Medications on Prescriptions.medicationId= Medications.medicationId");
+        $result = $this->connection->query("SELECT * FROM  prescriptions join medications on prescriptions.medicationId= medications.medicationId");
         return $result->fetch_all(MYSQLI_ASSOC);
     }
     
