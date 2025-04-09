@@ -15,7 +15,7 @@ class PharmacyPortal {
             case 'addPrescription':
                 $this->addPrescription();
                 break;
-            case 'viewPrescription':
+            case 'viewPrescriptions':
                 $this->viewPrescriptions();
                 break;
             case 'viewInventory':
@@ -41,15 +41,15 @@ class PharmacyPortal {
             $quantity = $_POST['quantity'];
 
             $this->db->addPrescription($patientUserName, $medicationId, $dosageInstructions, $quantity);
-            header("Location: index.php?action=viewReservations&message=Prescription Added");
+            header("Location:?action=viewPrescriptions&message=Prescription Added");
         } else {
             include 'templates/addPrescription.php';
         }
     }
 
-    private function viewPrescription() {
-        $reservations = $this->db->getAllPrescriptions();
-        include 'templates/viewPrescription.php';
+    private function viewPrescriptions() {
+        $prescriptions = $this->db->getAllPrescriptions();
+        include 'templates/viewPrescriptions.php';
     }
 }
 
