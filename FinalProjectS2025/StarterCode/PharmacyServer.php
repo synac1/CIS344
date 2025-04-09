@@ -37,13 +37,13 @@ class PharmacyPortal {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $patientUserName = $_POST['patient_username'];
             $medicationId= $_POST['medication_id'];
-            $dosageInstructions = $_POST['dossage_instructions'];
+            $dosageInstructions = $_POST['dosage_instructions'];
             $quantity = $_POST['quantity'];
 
             $this->db->addPrescription($patientUserName, $medicationId, $dosageInstructions, $quantity);
-            header("Location: index.php?action=viewReservations&message=Reservation Added");
+            header("Location: index.php?action=viewReservations&message=Prescription Added");
         } else {
-            include 'templates/addReservation.php';
+            include 'templates/addPrescription.php';
         }
     }
 

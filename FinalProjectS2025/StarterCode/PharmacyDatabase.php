@@ -40,7 +40,6 @@ class PharmacyDatabase {
         }else{
             echo "failed to add prescription";
         }
-      
     }
 
     public function getAllPrescriptions() {
